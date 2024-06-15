@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Error } from "./Error";
-import Post from "./Post";
+import { Post } from "./Post";
+
+
+
 
 const Form = () => {
   const [user, setUser] = useState({
@@ -44,7 +47,7 @@ const Form = () => {
         <button>Enviar</button>
       </form>
 
-      {show && <Post />}
+      {show && <Post user={user} />}
 
       {error && <Error />}
     </div>

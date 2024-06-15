@@ -3,7 +3,8 @@ import Navbar from "./Components/Navbar";
 import Favs from "./Routes/Favs";
 import Home from "./Routes/Home";
 import Detail from "./Routes/Detail";
-
+import Contact from "./Routes/Contact";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/Home" element={<Home />} />
-        <Route path="/Contacto" element={<Contacto />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/Detail/:id" element={<Detail />} />
         <Route path="/Favs" element={<Favs />} />
       </Routes>
