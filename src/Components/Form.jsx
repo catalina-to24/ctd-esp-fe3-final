@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Error } from "./Error";
 import { Post } from "./Post";
+import { useContextState } from "./utils/global.context";
 
 
 
@@ -12,6 +13,8 @@ const Form = () => {
   });
   const [show, setShow] = useState(false);
   const [error, setError] = useState(false);
+
+  const {state, dispatch} = useContextState()
 
   const handlerSubmit = (e) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -39,12 +42,13 @@ const Form = () => {
         <div>
           <input
             placeholder="Email"
-            type="text"
+            type="email"
             value={user.email}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
         <button>Enviar</button>
+        {/* <button onClick={() => dispatch({type: "TOGGLE_THEME"})}>cambiar tema</button> */}
       </form>
 
       {show && <Post user={user} />}

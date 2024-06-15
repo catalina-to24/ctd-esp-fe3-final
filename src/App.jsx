@@ -15,6 +15,8 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Detail/:id" element={<Detail />} />
         <Route path="/Favs" element={<Favs />} />
+        <Route path="*" element={<div>Not Found 404</div>
+        } />
       </Routes>
       <Footer />
     </div>
