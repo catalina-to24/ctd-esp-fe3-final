@@ -12,11 +12,11 @@ const Card = ({ dentist }) => {
   const location = useLocation();
 
   return (
-    <div /*className={CardStyles.cardContainer}*/>
+    <div className={CardStyles.cardContainer}>
       <Link to={"/detail/" + dentist.id}>
         <h4>{name}</h4>
         <h3>{username}</h3>
-        <img src={dentistImg} alt={username} /*className={CardStyles.cardImg}*/ />
+        <img src={dentistImg} alt={username} className={CardStyles.cardImg} />
       </Link>
 
       <button onClick={addFav} className="favButton">

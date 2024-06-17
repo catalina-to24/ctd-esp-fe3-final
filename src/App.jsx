@@ -16,7 +16,7 @@ function App() {
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.contact} element={<Contact />} />
         <Route path={routes.favs} element={<Favs />} />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/Detail/:id" element={<Detail />} />
         <Route path="*" element={<h1>Error 404 - Page not found</h1>} />
       </Routes>
       <Footer />

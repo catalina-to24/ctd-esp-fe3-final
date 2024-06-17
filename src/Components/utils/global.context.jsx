@@ -69,7 +69,6 @@ export const useContextState = () => useContext(ContextGlobal);
 // };
 
 // const ContextProvider = ({ children }) => {
-//   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
 //   const [state, dispatch] = useReducer(reducer, initialState);
 //   const url = "https://jsonplaceholder.typicode.com/users";
 

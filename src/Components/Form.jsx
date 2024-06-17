@@ -29,7 +29,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className= {state.theme}>
       <form onSubmit={handlerSubmit}>
         <div>
           <input
@@ -47,8 +47,7 @@ const Form = () => {
             onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
-        <button>Enviar</button>
-        {/* <button onClick={() => dispatch({type: "TOGGLE_THEME"})}>cambiar tema</button> */}
+        <button>Sent</button>
       </form>
 
       {show && <Post user={user} />}

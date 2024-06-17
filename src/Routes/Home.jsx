@@ -2,17 +2,16 @@ import React from "react";
 import Card from "../Components/Card";
 import { useContextState } from "../Components/utils/global.context";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const { state } = useContextState
+  const { state } = useContextState()
   return (
-    <main className="">
+    <main className= {state.theme}>
       <h1>Home</h1>
       <div className="card-grid">
-        {state.dentist.map((dentist) => (
+        {/* {state.dentist.map((dentist) => (
           <Card dentist={dentist} key={dentist.id}/>
-        ))}
+        ))} */}
         
       </div>
     </main>
