@@ -28,17 +28,33 @@ const reducer = (state, action) => {
         data: action.payload,
       };
     case "ADD_FAVS":
+      const updatedFavs = [...state.favs, action.payload];
+      localStorage.setItem('favs', JSON.stringify(updatedFavs));
       return { 
-        ...state, favs: [...state.favs, action.payload] 
+        ...state, favs: updatedFavs
       };
+      // return { 
+      //   ...state, favs: [...state.favs, action.payload] 
+      // };
     case "DELETE_FAVS":
       const filteredFavs = state.favs.filter(
         (user) => user.id != action.payload
       );
+      localStorage.setItem('favs', JSON.stringify(filteredFavs));
       return { 
         ...state, favs: filteredFavs
        };
-
+      // const filteredFavs = state.favs.filter(
+      //   (user) => user.id != action.payload
+      // );
+      // return { 
+      //   ...state, favs: filteredFavs
+      //  };
+      case "LOAD_FAVS":
+      return {
+        ...state,
+        favs: action.payload
+      };
     default:
       return state;
   }
@@ -55,6 +71,11 @@ export const ContextProvider = ({ children }) => {
         dispatch({ type: "GET_DENTIST", payload: response.data })
     )
       .catch((err) => console.log(err));
+
+    const storedFavs = JSON.parse(localStorage.getItem('favs'));
+    if (storedFavs) {
+      dispatch({ type: "LOAD_FAVS", payload: storedFavs });
+    }
   }, []);
 
   return (

@@ -5,12 +5,18 @@ import { useContextState } from "../Components/utils/global.context";
 
 const Card = ({ dentist }) => {
   const { name, username } = dentist;
+  const { state, dispatch } = useContextState();
+  const location = useLocation();
+
+const isFav = state.favs.some(fav => fav.id === dentist.id);
+
   const addFav = () => {
     dispatch({ type: "ADD_FAVS", payload: dentist});
   };
 
-  const { dispatch } = useContextState();
-  const location = useLocation();
+  const removeFav = () => {
+    dispatch({ type: "DELETE_FAVS", payload: dentist.id });
+  };
 
   return (
     <div className="card">
@@ -20,12 +26,11 @@ const Card = ({ dentist }) => {
         <h3>{username}</h3>
       </Link>
 
-      <button onClick={addFav} className="favButton">
-        Add fav
+      <button onClick={isFav ? removeFav : addFav} className="favButton">
+        {isFav ? '❌' : '⭐'}
       </button>
     </div>
   );
 };
 
 export default Card;
-/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */

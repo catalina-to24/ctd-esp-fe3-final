@@ -1,16 +1,17 @@
 import React from "react";
 import { useContextState } from "./utils/global.context";
 
+
 const Footer = () => {
   const { state } = useContextState();
   return (
     <footer className={state.theme}>
         <img src="/images/DH.png" alt="DH-logo"/>
       <div className="social">
-        <img src="/images/ico-facebook.png" alt="facebook" />
-        <img src="/images/ico-instagram.png" alt="instagram" />
-        <img src="/images/ico-whatsapp.png" alt="whatsapp" />
-        <img src="/images/ico-tiktok.png" alt="tiktok" />
+        <img src="/public/images/facebook.png" alt="facebook" />
+        <img src="/public/images/instagram.png" alt="instagram" />
+        <img src="/public/images/whatsapp.png" alt="whatsapp" />
+        <img src="/public/images/tiktok_logo_icon_186928.png" alt="tiktok" />
       </div>
     </footer>
   );
