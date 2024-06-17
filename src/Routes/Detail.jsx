@@ -10,7 +10,7 @@ const Detail = () => {
 
   return (
 
-    <div> className= {state.theme}
+    <div className={state.theme}> 
       <h1>Detail Dentist id </h1>
 
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}

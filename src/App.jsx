@@ -6,11 +6,14 @@ import Detail from "./Routes/Detail";
 import Contact from "./Routes/Contact";
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./Components/utils/routes";
+import { useContextState } from "./Components/utils/global.context";
 
 
 function App() {
+  const { state } = useContextState()
+
   return (
-    <div className="App">
+    <div className= {state.theme}>
       <Navbar />
       <Routes>
         <Route path={routes.home} element={<Home />} />

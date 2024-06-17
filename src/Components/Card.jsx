@@ -1,22 +1,23 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import dentistImg from "/public/images/doctor.jpg";
+import { useContextState } from "../Components/utils/global.context";
 
 const Card = ({ dentist }) => {
-  const { name, username} = dentist;
+  const { name, username } = dentist;
   const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
+    dispatch({ type: "ADD_FAVS", payload: dentist});
   };
 
-  // const { dispatch } = useRecipeStates();
+  const { dispatch } = useContextState();
   const location = useLocation();
 
   return (
-    <div className={CardStyles.cardContainer}>
+    <div className="card">
       <Link to={"/detail/" + dentist.id}>
+        <img src={dentistImg} alt={username} className="card-img"/>
         <h4>{name}</h4>
         <h3>{username}</h3>
-        <img src={dentistImg} alt={username} className={CardStyles.cardImg} />
       </Link>
 
       <button onClick={addFav} className="favButton">
