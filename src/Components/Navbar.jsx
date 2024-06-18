@@ -27,7 +27,7 @@ const Navbar = () => {
 
         <Button handleClick={() => navigate(-1)}>Back</Button>
         <button onClick={() => dispatch({ type: "TOGGLE_THEME" })}>
-          Change theme
+        {state.theme === "light" ? "🌙" : "🌞"}
         </button>
       </div>
     </nav>
