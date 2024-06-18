@@ -15,7 +15,7 @@ const Navbar = () => {
         </h2>
       </div>
       <div className="buttonNavBar">
-        <Link to={routes.home}>
+        <Link to="/">
           <h4>Home</h4>
         </Link>
         <Link to={routes.contact}>
