@@ -8,7 +8,7 @@ const Favs = () => {
 
   return (
     
-    <div className= {state.theme}>
+    <div className= {`${state.theme} mainPage`}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
       {state.favs.map((dentist) => (

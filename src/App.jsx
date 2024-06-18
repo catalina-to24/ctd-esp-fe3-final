@@ -7,6 +7,7 @@ import Contact from "./Routes/Contact";
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./Components/utils/routes";
 import { useContextState } from "./Components/utils/global.context";
+import Layout from "./Layout/Layout";
 
 
 function App() {
@@ -14,15 +15,17 @@ function App() {
 
   return (
     <div className= {state.theme}>
-      <Navbar />
+      
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path={routes.contact} element={<Contact />} />
-        <Route path={routes.favs} element={<Favs />} />
-        <Route path="/Detail/:id" element={<Detail />} />
-        <Route path="*" element={<h1>Error 404 - Page not found</h1>} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path={routes.contact} element={<Contact />} />
+          <Route path={routes.favs} element={<Favs />} />
+          <Route path="/Detail/:id" element={<Detail />} />
+          <Route path="*" element={<h1>Error 404 - Page not found</h1>} />
+        </Route>
       </Routes>
-      <Footer />
+      
     </div>
   );
 }

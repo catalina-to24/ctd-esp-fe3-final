@@ -5,7 +5,7 @@ import { useContextState } from "../Components/utils/global.context";
 const Home = () => {
   const { state } = useContextState();
   return (
-    <main className={state.theme}>
+    <main className={`${state.theme} mainPage`}>
       <h1>Home</h1>
       <div className="card-grid">
         {state.data.map((dentist) => (

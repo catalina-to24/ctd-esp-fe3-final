@@ -7,7 +7,7 @@ const Contact = () => {
   const { state } = useContextState()
 
   return (
-    <div className= {state.theme}>
+    <div className= {`${state.theme} mainPage`}>
       <h2>Want to know more?</h2>
       <p>Send us your questions and we will contact you</p>
       <Form/>

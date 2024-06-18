@@ -5,9 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height:100vh;
 }
+
 html{
-  height: 100%;
+  height: 100vh;
 }
 
 code {
@@ -156,4 +158,9 @@ button {
 
 .card-img{
   width: 100%;
+}
+
+.mainPage{
+  height:80vh;
+  overflow: scroll;
 }
