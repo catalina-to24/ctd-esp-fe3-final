@@ -1,9 +1,7 @@
 export const Error = () => {
   return (
     <div>
-      <h4 style={{ color: "red", background: "white" }}>
-        Por favor verifique su informacion nuevamente
-      </h4>
+      <h4 className="errorMessega"style={{ color: "red", background: "white" }}>Your information is wrong, please try again. </h4>
     </div>
   );
 };

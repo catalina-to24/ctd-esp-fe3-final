@@ -76,14 +76,29 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 300px;
-  height: 100px;
+  width: 400px;
   margin: 0 auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formTitle > h2, p {
+  text-align: center;
+  margin: 2rem;
+  
+}
+
+.formButton{
+  height: 1.7rem;
+  width: 10rem;
 }
 .buttonNavBar {
   display: flex;
   justify-content:space-around;
   gap: 1rem;;
+}
+.errorMessega{
+  text-align: center;
 }
 
 .card{

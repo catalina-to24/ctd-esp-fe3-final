@@ -47,7 +47,7 @@ const Form = () => {
             onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
-        <button>Sent</button>
+        <button className="formButton">Sent</button>
       </form>
 
       {show && <Post user={user} />}
