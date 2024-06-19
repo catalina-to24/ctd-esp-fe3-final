@@ -15,6 +15,7 @@ const Navbar = () => {
         </h2>
       </div>
       <div className="buttonNavBar">
+      <Button handleClick={() => navigate(-1)}>⬅</Button>
         <Link to="/">
           <h4>Home</h4>
         </Link>
@@ -25,7 +26,7 @@ const Navbar = () => {
           <h4>Favs</h4>
         </Link>
 
-        <Button handleClick={() => navigate(-1)}>Back</Button>
+        
         <button onClick={() => dispatch({ type: "TOGGLE_THEME" })}>
         {state.theme === "light" ? "🌙" : "🌞"}
         </button>
@@ -35,17 +36,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  /* <Button
-          handleClick={() => dispatch({ type: "ADD_CART", payload: item })}
-        >
-          🛒
-        </Button>
-      ) : (
-        <Button
-          handleClick={() =>
-            dispatch({ type: "DELETE_CART", payload: item.id })
-          }
-        ></Button> */
-}
