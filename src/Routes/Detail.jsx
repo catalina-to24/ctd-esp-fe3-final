@@ -11,7 +11,6 @@ const Detail = () => {
   const [dentist, setDentist] = useState();
   const params = useParams();
   const url = `https://jsonplaceholder.typicode.com/users/${params.id}`;
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   useEffect(() => {
     axios(url).then((res) => {
       console.log(res.data);
@@ -24,8 +23,6 @@ const Detail = () => {
     <div className={`${state.theme} mainPage`}> 
       <h1>Detail Dentist </h1>
 
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
       
       {dentist && (
         <>
