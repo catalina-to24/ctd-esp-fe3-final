@@ -33,9 +33,6 @@ const reducer = (state, action) => {
       return { 
         ...state, favs: updatedFavs
       };
-      // return { 
-      //   ...state, favs: [...state.favs, action.payload] 
-      // };
     case "DELETE_FAVS":
       const filteredFavs = state.favs.filter(
         (user) => user.id != action.payload
@@ -44,16 +41,16 @@ const reducer = (state, action) => {
       return { 
         ...state, favs: filteredFavs
        };
-      // const filteredFavs = state.favs.filter(
-      //   (user) => user.id != action.payload
-      // );
-      // return { 
-      //   ...state, favs: filteredFavs
-      //  };
       case "LOAD_FAVS":
       return {
         ...state,
         favs: action.payload
+      };
+      case "DELETE_ALL":
+      localStorage.removeItem('favs');
+      return {
+        ...state,
+        favs: []
       };
     default:
       return state;

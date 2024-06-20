@@ -186,3 +186,17 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+
+
+.delete{
+  all: unset;
+  cursor: pointer;
+  background-color: black;
+  width: 5rem;
+  height: 3rem;
+  color:red;
+  margin:10px;
+  padding: 3px;
+  text-align: center;
+  /* border-radius: 50%; */
+}
