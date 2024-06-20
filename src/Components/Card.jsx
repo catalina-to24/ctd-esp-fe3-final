@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import dentistImg from "/public/images/doctor.jpg";
+import dentistImg from "/images/doctor.jpg";
 import { useContextState } from "../Components/utils/global.context";
 
 const Card = ({ dentist }) => {
